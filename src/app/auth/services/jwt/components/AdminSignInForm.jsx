@@ -26,7 +26,7 @@ const defaultValues = {
 	remember: true
 };
 
-function JwtSignInForm() {
+function AdminSignInForm() {
 	const { signIn } = useJwtAuth();
 	const { control, formState, handleSubmit, setValue, setError } = useForm({
 		mode: 'onChange',
@@ -69,6 +69,8 @@ function JwtSignInForm() {
 					<TextField
 						{...field}
 						className="mb-24"
+						id="username"
+						name="email"
 						label="Email"
 						autoFocus
 						type="email"
@@ -90,6 +92,8 @@ function JwtSignInForm() {
 						className="mb-24"
 						label="Password"
 						type="password"
+						id="password"
+						name="password"
 						error={!!errors.password}
 						helperText={errors?.password?.message}
 						variant="outlined"
@@ -133,12 +137,14 @@ function JwtSignInForm() {
 				aria-label="Sign in"
 				disabled={_.isEmpty(dirtyFields) || !isValid}
 				type="submit"
+				name="login"
 				size="large"
+				id="signin"
 			>
-				Sign in
+				LOGIN
 			</Button>
 		</form>
 	);
 }
 
-export default JwtSignInForm;
+export default AdminSignInForm;

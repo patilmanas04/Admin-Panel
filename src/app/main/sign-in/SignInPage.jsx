@@ -10,8 +10,8 @@ import Tab from '@mui/material/Tab';
 import CardContent from '@mui/material/CardContent';
 import _ from '@lodash';
 import Alert from '@mui/material/Alert';
-import JwtLoginTab from './tabs/JwtSignInTab';
-import FirebaseSignInTab from './tabs/FirebaseSignInTab';
+import AdminLoginTab from './tabs/AdminSignInTab';
+import EmployeeSignInTab from './tabs/EmployeeSignInTab';
 import AwsSignInTab from './tabs/AwsSignInTab';
 
 const tabs = [
@@ -19,7 +19,7 @@ const tabs = [
 		id: 'admin',
 		title: 'admin',
 		logo: "assets/images/logo/admin.svg",
-		logoClass: 'h-30 w-30'
+		logoClass: 'h-40'
 	},
 	{
 		id: 'employee',
@@ -74,8 +74,8 @@ function SignInPage() {
 						))}
 					</Tabs>
 
-					{selectedTabId === 'admin' && <JwtLoginTab />} {/* Change name to AdminLoginTab */}
-					{selectedTabId === 'employee' && <FirebaseSignInTab />} {/* Change name to EmployeeLoginTab */}
+					{selectedTabId === 'admin' && <AdminLoginTab />} {/* Change name to AdminLoginTab */}
+					{selectedTabId === 'employee' && <EmployeeSignInTab />} {/* Change name to EmployeeLoginTab */}
 				</CardContent>
 			</Paper>
 
@@ -145,34 +145,12 @@ function SignInPage() {
 					/>
 				</Box>
 
-				{/* <div className="relative z-10 w-full max-w-2xl">
+				<div className="relative z-10 w-full max-w-2xl">
 					<div className="text-7xl font-bold leading-none text-gray-100">
 						<div>Welcome to</div>
-						<div>our community</div>
+						<div>C B Patel Health Club</div>
 					</div>
-					<div className="mt-24 text-lg leading-6 tracking-tight text-gray-400">
-						Fuse helps developers to build organized and well coded dashboards full of beautiful and rich
-						modules. Join us and start building your application today.
-					</div>
-					<div className="mt-32 flex items-center">
-						<AvatarGroup
-							sx={{
-								'& .MuiAvatar-root': {
-									borderColor: 'primary.main'
-								}
-							}}
-						>
-							<Avatar src="assets/images/avatars/female-18.jpg" />
-							<Avatar src="assets/images/avatars/female-11.jpg" />
-							<Avatar src="assets/images/avatars/male-09.jpg" />
-							<Avatar src="assets/images/avatars/male-16.jpg" />
-						</AvatarGroup>
-
-						<div className="ml-16 font-medium tracking-tight text-gray-400">
-							More than 17k people joined us, it's your turn
-						</div>
-					</div>
-				</div> */}
+				</div>
 			</Box>
 		</div>
 	);
