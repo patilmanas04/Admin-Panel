@@ -9,10 +9,10 @@ import { useAppSelector } from 'app/store/hooks';
 import { selectWidget } from '../AnalyticsDashboardApi';
 
 /**
- * Gender widget.
+ * New vs. returning widget.
  */
-function GenderWidget() {
-	const widget = useAppSelector(selectWidget('gender'));
+function InquiryWidget() {
+	const widget = useAppSelector(selectWidget('newVsReturning'));
 
 	if (!widget) {
 		return null;
@@ -37,7 +37,7 @@ function GenderWidget() {
 				enabled: true
 			}
 		},
-		colors: ['#319795', '#4FD1C5'],
+		colors: ['#3182CE', '#63B3ED'],
 		labels,
 		plotOptions: {
 			pie: {
@@ -86,7 +86,9 @@ function GenderWidget() {
 	return (
 		<Paper className="flex flex-col flex-auto shadow rounded-2xl overflow-hidden p-24">
 			<div className="flex flex-col sm:flex-row items-start justify-between">
-				<Typography className="text-lg font-medium tracking-tight leading-6 truncate">Gender</Typography>
+				<Typography className="text-lg font-medium tracking-tight leading-6 truncate">
+					Inquiry
+				</Typography>
 				<div className="ml-8">
 					<Chip
 						size="small"
@@ -136,4 +138,4 @@ function GenderWidget() {
 	);
 }
 
-export default memo(GenderWidget);
+export default memo(InquiryWidget);

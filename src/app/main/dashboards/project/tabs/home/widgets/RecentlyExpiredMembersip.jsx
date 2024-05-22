@@ -7,15 +7,16 @@ import FuseLoading from '@fuse/core/FuseLoading';
 import { useGetProjectDashboardWidgetsQuery } from '../../../ProjectDashboardApi';
 
 /**
- * The OverdueWidget widget.
+ * The FeaturesWidget widget.
  */
-function OverdueWidget() {
+function RecentlyExpiredMembership() {
 	const { data: widgets, isLoading } = useGetProjectDashboardWidgetsQuery();
-	const widget = widgets?.overdue;
 
 	if (isLoading) {
 		return <FuseLoading />;
 	}
+
+	const widget = widgets?.features;
 
 	if (!widget) {
 		return null;
@@ -23,35 +24,34 @@ function OverdueWidget() {
 
 	const { data, title } = widget;
 	return (
-		<Paper className="flex flex-col flex-auto shadow rounded-2xl overflow-hidden">
-			<div className="flex items-center justify-between px-8 pt-12">
+		<Paper className="flex flex-col flex-auto shadow rounded-2xl p-12 overflow-hidden cursor-pointer">
+			<div className="flex items-center justify-center">
 				<Typography
-					className="px-16 text-lg font-medium tracking-tight leading-6 truncate"
+					className="px-16 text-lg text-center font-medium tracking-tight leading-6 truncate"
 					color="text.secondary"
 				>
-					{title}
+					{/* {title} */}Recently Expired Membership
 				</Typography>
-				<IconButton
+				{/* <IconButton
 					aria-label="more"
 					size="large"
 				>
 					<FuseSvgIcon>heroicons-outline:dots-vertical</FuseSvgIcon>
-				</IconButton>
+				</IconButton> */}
 			</div>
 			<div className="text-center mt-8">
-				<Typography className="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-red-500">
+				<Typography className="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-grey-500">
 					{String(data.count)}
 				</Typography>
-				<Typography className="text-lg font-medium text-red-600">{data.name}</Typography>
 			</div>
-			<Typography
+			{/* <Typography
 				className="flex items-baseline justify-center w-full mt-20 mb-24"
 				color="text.secondary"
 			>
 				<span className="truncate">{data.extra.name}</span>:<b className="px-8">{String(data.extra.count)}</b>
-			</Typography>
+			</Typography> */}
 		</Paper>
 	);
 }
 
-export default memo(OverdueWidget);
+export default memo(RecentlyExpiredMembership);

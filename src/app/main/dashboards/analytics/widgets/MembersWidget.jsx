@@ -9,10 +9,10 @@ import { useAppSelector } from 'app/store/hooks';
 import { selectWidget } from '../AnalyticsDashboardApi';
 
 /**
- * Language widget.
+ * Gender widget.
  */
-function LanguageWidget() {
-	const widget = useAppSelector(selectWidget('language'));
+function MembersWidget() {
+	const widget = useAppSelector(selectWidget('gender'));
 
 	if (!widget) {
 		return null;
@@ -37,7 +37,7 @@ function LanguageWidget() {
 				enabled: true
 			}
 		},
-		colors: ['#805AD5', '#B794F4'],
+		colors: ['#319795', '#4FD1C5'],
 		labels,
 		plotOptions: {
 			pie: {
@@ -69,10 +69,10 @@ function LanguageWidget() {
 			fillSeriesColor: false,
 			theme: 'dark',
 			custom: ({ seriesIndex, w }) => `<div class="flex items-center h-32 min-h-32 max-h-23 px-12">
-					<div class="w-12 h-12 rounded-full" style="background-color: ${w.config.colors[seriesIndex]};"></div>
-					<div class="ml-8 text-md leading-none">${w.config.labels[seriesIndex]}:</div>
-					<div class="ml-8 text-md font-bold leading-none">${w.config.series[seriesIndex]}%</div>
-				</div>`
+            <div class="w-12 h-12 rounded-full" style="background-color: ${w.config.colors[seriesIndex]};"></div>
+            <div class="ml-8 text-md leading-none">${w.config.labels[seriesIndex]}:</div>
+            <div class="ml-8 text-md font-bold leading-none">${w.config.series[seriesIndex]}%</div>
+        </div>`
 		}
 	};
 	useEffect(() => {
@@ -86,7 +86,9 @@ function LanguageWidget() {
 	return (
 		<Paper className="flex flex-col flex-auto shadow rounded-2xl overflow-hidden p-24">
 			<div className="flex flex-col sm:flex-row items-start justify-between">
-				<Typography className="text-lg font-medium tracking-tight leading-6 truncate">Language</Typography>
+				<Typography className="text-lg font-medium tracking-tight leading-6 truncate">
+					Members
+				</Typography>
 				<div className="ml-8">
 					<Chip
 						size="small"
@@ -136,4 +138,4 @@ function LanguageWidget() {
 	);
 }
 
-export default memo(LanguageWidget);
+export default memo(MembersWidget);

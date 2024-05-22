@@ -1,16 +1,24 @@
 import { motion } from 'framer-motion';
 import SummaryWidget from './widgets/SummaryWidget';
-import OverdueWidget from './widgets/OverdueWidget';
-import IssuesWidget from './widgets/IssuesWidget';
-import FeaturesWidget from './widgets/FeaturesWidget';
+import UpcomingAppointmentsWidget from './widgets/UpcomingAppointmentsWidget';
+import UpcomingFollowupWidget from './widgets/UpcomingFollowupWidget';
+import UpcomingBirthdayWidget from './widgets/UpcomingBirthdayWidget';
+import RecentCollections from './widgets/RecentCollections';
+import RecentlyExpiredMembersip from './widgets/RecentlyExpiredMembersip';
+import UpcomingPaymentDueWidget from './widgets/UpcomingPaymentDueWidget';
+import UpcomingMembershipExpiresWidget from './widgets/UpcomingMembershipExpiresWidget';
+import TodayClassesWidget from './widgets/TodayClassesWidget';
 import GithubIssuesWidget from './widgets/GithubIssuesWidget';
 import TaskDistributionWidget from './widgets/TaskDistributionWidget';
 import ScheduleWidget from './widgets/ScheduleWidget';
+import { useState } from 'react';
 
 /**
  * The HomeTab component.
  */
 function HomeTab() {
+	const [graph, setGraph] = useState(0)
+
 	const container = {
 		show: {
 			transition: {
@@ -22,6 +30,11 @@ function HomeTab() {
 		hidden: { opacity: 0, y: 20 },
 		show: { opacity: 1, y: 0 }
 	};
+
+	const handleClick = (value) => {
+		setGraph(value)
+	}
+
 	return (
 		<motion.div
 			className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-24 w-full min-w-0 p-24"
@@ -30,16 +43,28 @@ function HomeTab() {
 			animate="show"
 		>
 			<motion.div variants={item}>
-				<SummaryWidget />
+				<UpcomingAppointmentsWidget />
 			</motion.div>
 			<motion.div variants={item}>
-				<OverdueWidget />
+				<UpcomingFollowupWidget />
 			</motion.div>
 			<motion.div variants={item}>
-				<IssuesWidget />
+				<UpcomingBirthdayWidget />
 			</motion.div>
 			<motion.div variants={item}>
-				<FeaturesWidget />
+				<RecentCollections />
+			</motion.div>
+			<motion.div variants={item}>
+				<RecentlyExpiredMembersip />
+			</motion.div>
+			<motion.div variants={item}>
+				<UpcomingPaymentDueWidget />
+			</motion.div>
+			<motion.div variants={item}>
+				<UpcomingMembershipExpiresWidget />
+			</motion.div>
+			<motion.div variants={item}>
+				<TodayClassesWidget />
 			</motion.div>
 			<motion.div
 				variants={item}
@@ -47,7 +72,7 @@ function HomeTab() {
 			>
 				<GithubIssuesWidget />
 			</motion.div>
-			<motion.div
+			{/* <motion.div
 				variants={item}
 				className="sm:col-span-2 md:col-span-4 lg:col-span-2"
 			>
@@ -58,7 +83,7 @@ function HomeTab() {
 				className="sm:col-span-2 md:col-span-4 lg:col-span-2"
 			>
 				<ScheduleWidget />
-			</motion.div>
+			</motion.div> */}
 		</motion.div>
 	);
 }

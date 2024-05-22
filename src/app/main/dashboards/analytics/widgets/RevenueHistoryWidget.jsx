@@ -12,9 +12,9 @@ import { useAppSelector } from 'app/store/hooks';
 import { selectWidget } from '../AnalyticsDashboardApi';
 
 /**
- * The visitors overview widget.
+ * The revenue history widget.
  */
-function VisitorsOverviewWidget() {
+function RevenueHistoryWidget() {
 	const theme = useTheme();
 	const contrastTheme = useAppSelector(selectContrastMainTheme(theme.palette.primary.dark));
 	const widget = useAppSelector(selectWidget('visitors'));
@@ -138,16 +138,16 @@ function VisitorsOverviewWidget() {
 							}}
 							className="mr-16 text-2xl md:text-3xl font-semibold tracking-tight leading-7"
 						>
-							Visitors Overview
+							Revenue History
 						</Typography>
-						<Typography
+						{/* <Typography
 							className="font-medium"
 							sx={{
 								color: alpha(contrastTheme.palette.primary.contrastText, 0.7)
 							}}
 						>
 							Number of unique visitors
-						</Typography>
+						</Typography> */}
 					</div>
 					<div className="mt-12 sm:mt-0 sm:ml-8">
 						<Tabs
@@ -196,4 +196,4 @@ function VisitorsOverviewWidget() {
 	);
 }
 
-export default VisitorsOverviewWidget;
+export default RevenueHistoryWidget;

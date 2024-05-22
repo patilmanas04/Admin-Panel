@@ -28,7 +28,7 @@ const defaultValues = {
 	remember: true
 };
 
-function FirebaseSignInForm() {
+function EmployeeSignInForm() {
 	const { signIn } = useFirebaseAuth();
 	const dispatch = useAppDispatch();
 	const { control, formState, handleSubmit, setValue, setError } = useForm({
@@ -101,6 +101,8 @@ function FirebaseSignInForm() {
 						<TextField
 							{...field}
 							className="mb-24"
+							id="username"
+							name="email"
 							label="Email"
 							autoFocus
 							type="email"
@@ -120,6 +122,8 @@ function FirebaseSignInForm() {
 						<TextField
 							{...field}
 							className="mb-24"
+							id="password"
+							name="password"
 							label="Password"
 							type="password"
 							error={!!errors.password}
@@ -131,8 +135,8 @@ function FirebaseSignInForm() {
 					)}
 				/>
 
-				<div className="flex flex-col items-center justify-center sm:flex-row sm:justify-between">
-					<Controller
+				<div className="flex flex-col items-center justify-center sm:flex-row">
+					{/* <Controller
 						name="remember"
 						control={control}
 						render={({ field }) => (
@@ -148,7 +152,7 @@ function FirebaseSignInForm() {
 								/>
 							</FormControl>
 						)}
-					/>
+					/> */}
 
 					<Link
 						className="text-md font-medium"
@@ -166,12 +170,13 @@ function FirebaseSignInForm() {
 					disabled={_.isEmpty(dirtyFields) || !isValid}
 					type="submit"
 					size="large"
+					id="signin"
 				>
-					Sign in
+					LOGIN
 				</Button>
 			</form>
 		</div>
 	);
 }
 
-export default FirebaseSignInForm;
+export default EmployeeSignInForm;

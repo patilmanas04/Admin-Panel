@@ -7,7 +7,7 @@ import { styled } from '@mui/material/styles';
 import FuseLoading from '@fuse/core/FuseLoading';
 import ProjectDashboardAppHeader from './ProjectDashboardAppHeader';
 import HomeTab from './tabs/home/HomeTab';
-import TeamTab from './tabs/team/TeamTab';
+import RecentlyRegisteredUsersTab from './tabs/team/RecentlyRegisteredUsersTab';
 import BudgetTab from './tabs/budget/BudgetTab';
 import { useGetProjectDashboardWidgetsQuery } from './ProjectDashboardApi';
 
@@ -35,7 +35,7 @@ function ProjectDashboardApp() {
 
 	return (
 		<Root
-			header={<ProjectDashboardAppHeader />}
+			// header={<ProjectDashboardAppHeader />}
 			content={
 				<div className="w-full p-12 pt-16 sm:pt-24 lg:ltr:pr-0 lg:rtl:pl-0">
 					<Tabs
@@ -64,17 +64,12 @@ function ProjectDashboardApp() {
 						<Tab
 							className="text-14 font-semibold min-h-40 min-w-64 mx-4 px-12"
 							disableRipple
-							label="Budget"
-						/>
-						<Tab
-							className="text-14 font-semibold min-h-40 min-w-64 mx-4 px-12"
-							disableRipple
-							label="Team"
+							label="Recently Registered Users"
 						/>
 					</Tabs>
 					{tabValue === 0 && <HomeTab />}
-					{tabValue === 1 && <BudgetTab />}
-					{tabValue === 2 && <TeamTab />}
+					{/* {tabValue === 1 && <BudgetTab />} */}
+					{tabValue === 1 && <RecentlyRegisteredUsersTab />}
 				</div>
 			}
 		/>

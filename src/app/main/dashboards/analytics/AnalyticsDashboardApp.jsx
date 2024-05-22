@@ -3,15 +3,21 @@ import { motion } from 'framer-motion';
 import Typography from '@mui/material/Typography';
 import FuseLoading from '@fuse/core/FuseLoading';
 import AnalyticsDashboardAppHeader from './AnalyticsDashboardAppHeader';
-import VisitorsOverviewWidget from './widgets/VisitorsOverviewWidget';
+import RevenueHistoryWidget from './widgets/RevenueHistoryWidget';
+import MembershipWidget from './widgets/MembershipWidget';
+import PersonalTrainerWidget from './widgets/PersonalTrainerWidget';
 import ConversionsWidget from './widgets/ConversionsWidget';
 import ImpressionsWidget from './widgets/ImpressionsWidget';
 import VisitsWidget from './widgets/VisitsWidget';
-import VisitorsVsPageViewsWidget from './widgets/VisitorsVsPageViewsWidget';
-import NewVsReturningWidget from './widgets/NewVsReturningWidget';
-import AgeWidget from './widgets/AgeWidget';
-import LanguageWidget from './widgets/LanguageWidget';
-import GenderWidget from './widgets/GenderWidget';
+import MembershipVsMembershipTimeWidget from './widgets/MembershipVsMembershipTimeWidget';
+import InquiryWidget from './widgets/InquiryWidget';
+import AppUsersWidget from './widgets/AppUsersWidget';
+import MonthResultsWidget from './widgets/MonthResultsWidget';
+import MembersWidget from './widgets/MembersWidget';
+import MembershipExpiredWidget from './widgets/MembershipExpiredWidget';
+import ConsultantsSalesWidget from './widgets/ConsultantsSalesWidget';
+import MemberAgeGroupWidget from './widgets/MemberAgeGroupWidget';
+import PaymentsEfficiencyWidget from './widgets/PaymentsEfficiencyWidget';
 import { useGetAnalyticsDashboardWidgetsQuery } from './AnalyticsDashboardApi';
 
 const container = {
@@ -50,10 +56,24 @@ function AnalyticsDashboardApp() {
 						variants={item}
 						className="sm:col-span-2 lg:col-span-3"
 					>
-						<VisitorsOverviewWidget />
+						<RevenueHistoryWidget />
 					</motion.div>
 
 					<motion.div
+						variants={item}
+						className="sm:col-span-2 lg:col-span-3"
+					>
+						<MembershipWidget />
+					</motion.div>
+
+					<motion.div
+						variants={item}
+						className="sm:col-span-2 lg:col-span-3"
+					>
+						<PersonalTrainerWidget />
+					</motion.div>
+
+					{/* <motion.div
 						variants={item}
 						className="sm:col-span-2 lg:col-span-1 "
 					>
@@ -72,16 +92,16 @@ function AnalyticsDashboardApp() {
 						className="sm:col-span-2 lg:col-span-1 "
 					>
 						<VisitsWidget />
-					</motion.div>
+					</motion.div> */}
 
 					<motion.div
 						variants={item}
 						className="sm:col-span-2 lg:col-span-3"
 					>
-						<VisitorsVsPageViewsWidget />
+						<MembershipVsMembershipTimeWidget />
 					</motion.div>
 
-					<div className="w-full mt-16 sm:col-span-3">
+					{/* <div className="w-full mt-16 sm:col-span-3">
 						<Typography className="text-2xl font-semibold tracking-tight leading-6">
 							Your Audience
 						</Typography>
@@ -91,20 +111,32 @@ function AnalyticsDashboardApp() {
 						>
 							Demographic properties of your users
 						</Typography>
-					</div>
+					</div> */}
 
 					<div className="sm:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-32 w-full">
 						<motion.div variants={item}>
-							<NewVsReturningWidget />
+							<InquiryWidget />
 						</motion.div>
 						<motion.div variants={item}>
-							<GenderWidget />
+							<MembersWidget />
 						</motion.div>
 						<motion.div variants={item}>
-							<AgeWidget />
+							<AppUsersWidget />
 						</motion.div>
 						<motion.div variants={item}>
-							<LanguageWidget />
+							<MonthResultsWidget />
+						</motion.div>
+						<motion.div variants={item}>
+							<MembershipExpiredWidget />
+						</motion.div>
+						<motion.div variants={item}>
+							<ConsultantsSalesWidget />
+						</motion.div>
+						<motion.div variants={item}>
+							<MemberAgeGroupWidget />
+						</motion.div>
+						<motion.div variants={item}>
+							<PaymentsEfficiencyWidget />
 						</motion.div>
 					</div>
 				</motion.div>

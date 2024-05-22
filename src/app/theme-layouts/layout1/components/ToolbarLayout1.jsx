@@ -66,10 +66,10 @@ function ToolbarLayout1(props) {
 					</div>
 
 					<div className="flex h-full items-center overflow-x-auto px-8">
-						<LanguageSwitcher />
-						<AdjustFontSize />
+						{/* <LanguageSwitcher />
+						<AdjustFontSize /> */}
 						<FullScreenToggle />
-						<NavigationSearch />
+						{/* <NavigationSearch /> */}
 						<QuickPanelToggleButton />
 						<NotificationPanelToggleButton />
 						<UserMenu />

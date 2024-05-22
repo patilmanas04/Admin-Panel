@@ -7,9 +7,9 @@ import FuseLoading from '@fuse/core/FuseLoading';
 import { useGetProjectDashboardWidgetsQuery } from '../../../ProjectDashboardApi';
 
 /**
- * The TeamMembersWidget widget.
+ * The RecentlyRegisteredUserWidget widget.
  */
-function TeamMembersWidget() {
+function RecentlyRegisteredUserWidget() {
 	const { data: widgets, isLoading } = useGetProjectDashboardWidgetsQuery();
 
 	if (isLoading) {
@@ -92,4 +92,4 @@ function TeamMembersWidget() {
 	);
 }
 
-export default memo(TeamMembersWidget);
+export default memo(RecentlyRegisteredUserWidget);

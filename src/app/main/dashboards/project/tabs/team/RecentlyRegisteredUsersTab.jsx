@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import TeamMembersWidget from './widgets/TeamMembersWidget';
+import RecentlyRegisteredUserWidget from './widgets/RecentlyRegisteredUserWidget';
 
 /**
- * The TeamTab component.
+ * The RecentlyRegisteredUsersTab component.
  */
-function TeamTab() {
+function RecentlyRegisteredUsersTab() {
 	const container = {
 		show: {
 			transition: {
@@ -27,10 +27,10 @@ function TeamTab() {
 				variants={item}
 				className="widget flex w-full"
 			>
-				<TeamMembersWidget />
+				<RecentlyRegisteredUserWidget />
 			</motion.div>
 		</motion.div>
 	);
 }
 
-export default TeamTab;
+export default RecentlyRegisteredUsersTab;

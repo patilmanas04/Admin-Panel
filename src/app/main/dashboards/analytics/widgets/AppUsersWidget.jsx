@@ -9,9 +9,9 @@ import { useAppSelector } from 'app/store/hooks';
 import { selectWidget } from '../AnalyticsDashboardApi';
 
 /**
- * The age widget.
+ * The app users widget.
  */
-function AgeWidget() {
+function AppUsersWidget() {
 	const widget = useAppSelector(selectWidget('age'));
 
 	if (!widget) {
@@ -86,7 +86,9 @@ function AgeWidget() {
 	return (
 		<Paper className="flex flex-col flex-auto shadow rounded-2xl overflow-hidden p-24">
 			<div className="flex flex-col sm:flex-row items-start justify-between">
-				<Typography className="text-lg font-medium tracking-tight leading-6 truncate">Age</Typography>
+				<Typography className="text-lg font-medium tracking-tight leading-6 truncate">
+					App Users
+				</Typography>
 				<div className="ml-8">
 					<Chip
 						size="small"
@@ -136,4 +138,4 @@ function AgeWidget() {
 	);
 }
 
-export default memo(AgeWidget);
+export default memo(AppUsersWidget);

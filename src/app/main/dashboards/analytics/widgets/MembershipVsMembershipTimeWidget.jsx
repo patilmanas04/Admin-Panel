@@ -9,9 +9,9 @@ import { useAppSelector } from 'app/store/hooks';
 import { selectWidget } from '../AnalyticsDashboardApi';
 
 /**
- * Visitors vs. Page Views widget.
+ * Membership vs. Membership Time.
  */
-function VisitorsVsPageViewsWidget() {
+function MembershipVsMembershipTimeWidget() {
 	const theme = useTheme();
 	const widget = useAppSelector(selectWidget('visitorsVsPageViews'));
 
@@ -99,17 +99,17 @@ function VisitorsVsPageViewsWidget() {
 		<Paper className="flex flex-col flex-auto shadow rounded-2xl overflow-hidden">
 			<div className="flex items-start justify-between m-24 mb-0">
 				<Typography className="text-lg font-medium tracking-tight leading-6 truncate">
-					Visitors vs. Page Views
+					Membership vs. Membership Time
 				</Typography>
 				<div className="ml-8">
 					<Chip
 						size="small"
 						className="font-medium text-sm"
-						label=" 30 days"
+						label="30 days"
 					/>
 				</div>
 			</div>
-			<div className="flex items-start mt-24 mx-24">
+			{/* <div className="flex items-start mt-24 mx-24">
 				<div className="grid grid-cols-1 sm:grid-cols-3 gap-42 sm:gap-48">
 					<div className="flex flex-col">
 						<div className="flex items-center">
@@ -190,7 +190,7 @@ function VisitorsVsPageViewsWidget() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> */}
 			<div className="flex flex-col flex-auto h-320 mt-12">
 				<ReactApexChart
 					className="flex-auto w-full h-full"
@@ -204,4 +204,4 @@ function VisitorsVsPageViewsWidget() {
 	);
 }
 
-export default VisitorsVsPageViewsWidget;
+export default MembershipVsMembershipTimeWidget;

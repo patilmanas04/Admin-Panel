@@ -9,9 +9,9 @@ import { useAppSelector } from 'app/store/hooks';
 import { selectWidget } from '../AnalyticsDashboardApi';
 
 /**
- * New vs. returning widget.
+ * Payments Efficiency widget.
  */
-function NewVsReturningWidget() {
+function PaymentsEfficiencyWidget() {
 	const widget = useAppSelector(selectWidget('newVsReturning'));
 
 	if (!widget) {
@@ -87,7 +87,7 @@ function NewVsReturningWidget() {
 		<Paper className="flex flex-col flex-auto shadow rounded-2xl overflow-hidden p-24">
 			<div className="flex flex-col sm:flex-row items-start justify-between">
 				<Typography className="text-lg font-medium tracking-tight leading-6 truncate">
-					New vs. Returning
+                    Payments Efficiency
 				</Typography>
 				<div className="ml-8">
 					<Chip
@@ -138,4 +138,4 @@ function NewVsReturningWidget() {
 	);
 }
 
-export default memo(NewVsReturningWidget);
+export default memo(PaymentsEfficiencyWidget);
