@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import clsx from 'clsx';
 import { memo } from 'react';
 import { selectFuseCurrentLayoutConfig, selectToolbarTheme } from '@fuse/core/FuseSettings/fuseSettingsSlice';
+import NotificationPanelToggleButton from 'src/app/main/apps/notifications/NotificationPanelToggleButton';
 import NavbarToggleButton from 'app/theme-layouts/shared-components/navbar/NavbarToggleButton';
 import { useAppSelector } from 'app/store/hooks';
 import AdjustFontSize from '../../shared-components/AdjustFontSize';
@@ -60,6 +61,7 @@ function ToolbarLayout3(props) {
 						<AdjustFontSize />
 						<FullScreenToggle />
 						<QuickPanelToggleButton />
+						<NotificationPanelToggleButton />
 						<UserMenu />
 					</div>
 				</Toolbar>
