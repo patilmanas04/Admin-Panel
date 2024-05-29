@@ -13,7 +13,7 @@ import { selectFilteredContactList, useGetContactsListQuery } from './ContactsAp
 /**
  * The contacts header.
  */
-function ContactsHeader() {
+function EmployeesHeader() {
 	const dispatch = useAppDispatch();
 	const searchText = useAppSelector(selectSearchText);
 	const { data, isLoading } = useGetContactsListQuery();
@@ -36,7 +36,7 @@ function ContactsHeader() {
 					animate={{ x: 0, transition: { delay: 0.2 } }}
 				>
 					<Typography className="text-24 md:text-32 font-extrabold tracking-tight leading-none">
-						Contacts
+						Employees
 					</Typography>
 				</motion.span>
 				<motion.span
@@ -48,7 +48,7 @@ function ContactsHeader() {
 						className="text-14 font-medium ml-2"
 						color="text.secondary"
 					>
-						{`${filteredData?.length} contacts`}
+						{`${filteredData?.length} employees`}
 					</Typography>
 				</motion.span>
 			</div>
@@ -67,7 +67,7 @@ function ContactsHeader() {
 					</FuseSvgIcon>
 
 					<Input
-						placeholder="Search contacts"
+						placeholder="Search employees"
 						className="flex flex-1 px-16"
 						disableUnderline
 						fullWidth
@@ -93,4 +93,4 @@ function ContactsHeader() {
 	);
 }
 
-export default ContactsHeader;
+export default EmployeesHeader;

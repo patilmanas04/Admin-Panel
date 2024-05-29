@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import useThemeMediaQuery from '@fuse/hooks/useThemeMediaQuery';
-import ContactsHeader from './ContactsHeader';
-import ContactsList from './ContactsList';
+import EmployeesHeader from './EmployeesHeader';
+import EmployeesList from './EmployeesList';
 import { useGetContactsListQuery, useGetContactsCountriesQuery, useGetContactsTagsQuery } from './ContactsApi';
 import ContactsSidebarContent from './ContactsSidebarContent';
 
@@ -18,6 +18,9 @@ const Root = styled(FusePageSimple)(({ theme }) => ({
  * The ContactsApp page.
  */
 function ContactsApp() {
+	useEffect(() => {
+		document.title = 'Employees';
+	}, [])
 	const pageLayout = useRef(null);
 	const routeParams = useParams();
 	const [rightSidebarOpen, setRightSidebarOpen] = useState(false);
@@ -30,8 +33,8 @@ function ContactsApp() {
 	}, [routeParams]);
 	return (
 		<Root
-			header={<ContactsHeader />}
-			content={<ContactsList />}
+			header={<EmployeesHeader />}
+			content={<EmployeesList />}
 			ref={pageLayout}
 			rightSidebarContent={<ContactsSidebarContent />}
 			rightSidebarOpen={rightSidebarOpen}

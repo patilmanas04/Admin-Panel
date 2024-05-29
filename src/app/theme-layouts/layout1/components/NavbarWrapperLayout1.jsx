@@ -36,7 +36,7 @@ function NavbarWrapperLayout1() {
 					{config.navbar.style === 'style-3-dense' && <NavbarStyle3 dense />}
 				</>
 			</ThemeProvider>
-			{config.navbar.display && !config.toolbar.display && !navbar.open && <NavbarToggleFabLayout1 />}
+			{/* {config.navbar.display && !config.toolbar.display && !navbar.open && <NavbarToggleFabLayout1 />} */}
 		</>
 	);
 }

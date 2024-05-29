@@ -10,7 +10,7 @@ import { selectFilteredContactList, selectGroupedFilteredContacts, useGetContact
 /**
  * The contacts list.
  */
-function ContactsList() {
+function EmployeesList() {
 	const { data, isLoading } = useGetContactsListQuery();
 	const filteredData = useAppSelector(selectFilteredContactList(data));
 	const groupedFilteredContacts = useAppSelector(selectGroupedFilteredContacts(filteredData));
@@ -66,4 +66,4 @@ function ContactsList() {
 	);
 }
 
-export default ContactsList;
+export default EmployeesList;
